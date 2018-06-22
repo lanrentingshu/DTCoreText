@@ -423,7 +423,7 @@
 		
 		NSURL *link = [NSURL URLWithString:cleanString];
         if (link == nil) {
-            link = [NSURL URLWithString:[cleanString stringByURLEncoding]];
+            link = [NSURL URLWithString:[cleanString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         }
 		
 		// deal with relative URL
